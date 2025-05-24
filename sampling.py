@@ -1,15 +1,11 @@
-import asyncio
 import json
-from typing import Any
 
 import mcp.types as types
-from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
 from gmail import read_gmail_messages
 
 mcp = FastMCP("Gmail Assistant server")
-load_dotenv()
 
 
 @mcp.tool()
@@ -25,5 +21,5 @@ def readGmail() -> types.SamplingMessage:
 
 if __name__ == "__main__":
     # Initialize and run the server
-    readGmail()
+    # readGmail()
     mcp.run(transport="stdio")
